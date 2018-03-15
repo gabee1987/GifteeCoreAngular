@@ -1,7 +1,11 @@
+using AutoMapper;
+using GifteeCoreAngular.Core;
+using GifteeCoreAngular.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -19,7 +23,19 @@ namespace GifteeCoreAngular
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Add Scoped services (A single instance of repository for each request)
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IGifteeRepository, GifteeRepository>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            // Add Database context
+            var connString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=GifteeDB;Integrated Security=True;Connect Timeout=30;";
+            services.AddDbContext<GifteeDbContext>(options => options.UseSqlServer(connString));
+
+
+            // Add framework services
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddAutoMapper();
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
