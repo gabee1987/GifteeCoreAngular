@@ -1,19 +1,18 @@
-<nav class="navbar bg-light">
-  <!-- Links -->
+<nav class="navbar bg-dark">
   <ul class="navbar-nav">
     <a class='navbar-brand' [routerLink]='["/"]'>GifteeCoreAngular</a>
     <li class="nav-item active" [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
-      <a [routerLink]='["/"]' (click)='collapse()'>
+      <a class="nav-link" [routerLink]='["/"]' (click)='collapse()'>
         <span class='glyphicon glyphicon-home'></span> Home
       </a>
     </li>
     <li class="nav-item" [routerLinkActive]='["link-active"]'>
-      <a [routerLink]='["/counter"]' (click)='collapse()'>
+      <a class="nav-link" [routerLink]='["/counter"]' (click)='collapse()'>
         <span class='glyphicon glyphicon-education'></span> Counter
       </a>
     </li>
     <li class="nav-item" [routerLinkActive]='["link-active"]'>
-      <a [routerLink]='["/fetch-data"]' (click)='collapse()'>
+      <a class="nav-link" [routerLink]='["/fetch-data"]' (click)='collapse()'>
         <span class='glyphicon glyphicon-th-list'></span> Fetch data
       </a>
     </li>
