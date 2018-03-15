@@ -19,6 +19,9 @@ import { ToastyModule } from 'ng2-toasty';
 // User
 import { UserListComponent } from './components/user-list/user-list.component';
 import { UserListService } from './services/userList.service';
+// Giftee
+import { GifteeFormComponent } from './components/giftee-form/giftee-form.component';
+import { GifteeFormService } from './services/giftee-form.service';
 
 
 @NgModule({
@@ -29,7 +32,8 @@ import { UserListService } from './services/userList.service';
     CounterComponent,
     FetchDataComponent,
     // Giftee Components
-    UserListComponent
+    UserListComponent,
+    GifteeFormComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -42,11 +46,14 @@ import { UserListService } from './services/userList.service';
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       // Giftee paths
-      { path: 'users/get', component: UserListComponent }
+      { path: 'users/get', component: UserListComponent },
+      { path: 'giftees/new', component: GifteeFormComponent },
+      { path: 'giftees/:id', component: GifteeFormComponent }
     ])
   ],
   providers: [
-    UserListService
+    UserListService,
+    GifteeFormService
   ],
   bootstrap: [AppComponent]
 })

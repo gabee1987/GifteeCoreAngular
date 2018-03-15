@@ -21,7 +21,11 @@
         <span class='glyphicon glyphicon-th-list'></span> Get Users
       </a>
     </li>
-
+    <li [routerLinkActive]="['link-active']">
+      <a class="nav-link" [routerLink]="['/giftees/new']">
+        <span class='glyphicon glyphicon-th-list'></span> Add Giftee
+      </a>
+    </li>
   </ul>
 
 </nav>

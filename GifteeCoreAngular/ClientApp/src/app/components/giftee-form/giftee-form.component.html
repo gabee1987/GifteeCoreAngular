@@ -1,0 +1,50 @@
+<ng2-toasty [position]="'top-right'"></ng2-toasty>
+<h1>New Giftee Form</h1>
+<p>
+  {{ giftee | json }}
+</p>
+
+<form #f="ngForm" (ngSubmit)="submit()" novalidate>
+  <div class="form-group">
+    <label for="user">User</label>
+    <select id="user" class="form-control" (change)="onUserChange()" [(ngModel)]="user" name="user" required #selectedUser="ngModel">
+      <option value=""></option>
+      <option *ngFor="let user of users" value="{{ user.id }}">{{ user.firstName }} {{ user.lastName }}</option>
+    </select>
+    <div class="alert alert-danger" *ngIf="selectedUser.touched && !selectedUser.valid" name="selectedUserAlert">Please select a user.</div>
+    <label for="giftee">User's Giftees</label>
+
+    <ul class="list-group">
+      <li *ngFor="let giftee of giftees" class="list-group-item">
+        Name: <strong>{{ giftee.firstName }} {{ giftee.lastName }}</strong>
+        Nickname: <strong>{{ giftee.nickName }}</strong>
+        Email: <strong>{{ giftee.email }}</strong>
+        Id: <strong>{{ giftee.id }}</strong>
+        <span class="col-lg-8 text-center">
+          <a class="btn btn-primary float-right" aria-hidden="true" href="/giftees/{{ giftee.id }}">Edit</a>
+        </span>
+      </li>
+    </ul>
+  </div>
+  <h2>Add New Giftee</h2>
+  <div class="form-group">
+    <label for="firstName">First Name</label>
+    <input id="firstName" type="text" value="" class="form-control" [(ngModel)]="giftee.firstName" name="firstName" required #firstName="ngModel" />
+    <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid" name="firstNameAlert">Please enter a name.</div>
+  </div>
+  <div class="form-group">
+    <label for="lastName">Last Name</label>
+    <input id="lastName" type="text" value="" class="form-control" [(ngModel)]="giftee.lastName" name="lastName" required #lastName="ngModel" />
+    <div class="alert alert-danger" *ngIf="lastName.touched && !lastName.valid" name="lastNameAlert">Please enter a name.</div>
+  </div>
+  <div class="form-group">
+    <label for="nicknamme">Nickname</label>
+    <input id="nicknamme" type="text" value="" class="form-control" [(ngModel)]="giftee.nickName" name="nickName" />
+  </div>
+  <div class="form-group">
+    <label for="gifteeEmail">Email</label>
+    <input id="gifteeEmail" type="text" value="" class="form-control" [(ngModel)]="giftee.email" name="gifteeEmail" required #gifteeEmail="ngModel" />
+    <div class="alert alert-danger" *ngIf="gifteeEmail.touched && !gifteeEmail.valid" name="gifteeEmailAlert">Please enter an email.</div>
+  </div>
+  <button type="submit" class="btn btn-primary">Save</button>
+</form>
