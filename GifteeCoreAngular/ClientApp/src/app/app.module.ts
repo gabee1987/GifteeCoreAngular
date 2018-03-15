@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler, NgZone } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
@@ -16,6 +16,7 @@ import { FetchDataComponent } from './components/fetch-data/fetch-data.component
 import { ToastyModule } from 'ng2-toasty';
 
 // Giftee components and services
+import { AppErrorHandler } from './app.error-handler';
 // User
 import { UserListComponent } from './components/user-list/user-list.component';
 import { UserListService } from './services/userList.service';
@@ -52,6 +53,7 @@ import { GifteeFormService } from './services/giftee-form.service';
     ])
   ],
   providers: [
+    { provide: ErrorHandler, useClass: AppErrorHandler },
     UserListService,
     GifteeFormService
   ],
