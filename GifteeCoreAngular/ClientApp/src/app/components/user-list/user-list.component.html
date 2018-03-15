@@ -1,0 +1,13 @@
+<h1>Users</h1>
+
+<ul class="list-group">
+  <a href="#" class="list-group-item list-group-item-action flex-column" *ngFor="let user of users">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1" id="firstName"> First Name: <strong> {{ user.firstName }}</strong></h5>
+      <h5 class="mb-1">Last Name: <strong>{{ user.lastName }}</strong></h5>
+      <p>  </p>
+      <small>Email: <strong>{{ user.email }}</strong></small>
+      <span class="badge badge-primary badge-pill pull-right">{{user.id}}</span>
+    </div>
+  </a>
+</ul>

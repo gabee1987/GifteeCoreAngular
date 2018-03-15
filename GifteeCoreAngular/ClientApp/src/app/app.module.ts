@@ -15,26 +15,39 @@ import { FetchDataComponent } from './components/fetch-data/fetch-data.component
 // External Angular modules components
 import { ToastyModule } from 'ng2-toasty';
 
+// Giftee components and services
+// User
+import { UserListComponent } from './components/user-list/user-list.component';
+import { UserListService } from './services/userList.service';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     HomeComponent,
     CounterComponent,
-    FetchDataComponent
+    FetchDataComponent,
+    // Giftee Components
+    UserListComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
+    HttpModule,
     FormsModule,
     ToastyModule.forRoot(),
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
+      // Giftee paths
+      { path: 'users/get', component: UserListComponent }
     ])
   ],
-  providers: [],
+  providers: [
+    UserListService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

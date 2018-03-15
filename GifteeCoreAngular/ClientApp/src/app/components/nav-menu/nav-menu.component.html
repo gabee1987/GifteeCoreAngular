@@ -16,6 +16,12 @@
         <span class='glyphicon glyphicon-th-list'></span> Fetch data
       </a>
     </li>
+    <li [routerLinkActive]="['link-active']">
+      <a class="nav-link" [routerLink]="['/users/get']" (click)='collapse()'>
+        <span class='glyphicon glyphicon-th-list'></span> Get Users
+      </a>
+    </li>
+
   </ul>
 
 </nav>
