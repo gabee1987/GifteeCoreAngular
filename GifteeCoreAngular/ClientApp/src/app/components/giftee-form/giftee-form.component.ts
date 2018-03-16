@@ -48,10 +48,10 @@ export class GifteeFormComponent implements OnInit {
       this.gifteeFormService.getGiftee(this.giftee.id)
         .subscribe(g => {
           this.giftee = g;
-          //}, err => {
-          //    if (err.status == 404) {
-          //        this.router.navigate(['/home']);
-          //    }
+          }, err => {
+              if (err.status == 404) {
+                  this.router.navigate(['/home']);
+              }
         });
       this.setGiftee(this.giftee);
     }
@@ -88,8 +88,8 @@ export class GifteeFormComponent implements OnInit {
             showClose: true,
             timeout: 5000
           });
+          this.router.navigate(['/giftees/new']);
         });
-      this.router.navigate(['/giftees/new']);
     }
     else {
       this.gifteeFormService.createGiftee(this.giftee)
@@ -101,9 +101,25 @@ export class GifteeFormComponent implements OnInit {
             showClose: true,
             timeout: 5000
           });
+          this.router.navigate(['/giftees/new']);
         });
       //this.ngForm.reset();
-      this.router.navigate(['/giftees/new']);
+    }
+  }
+
+  deleteGiftee() {
+    if (confirm('Are you sure?')) {
+      this.gifteeFormService.deleteGiftee(this.giftee.id)
+        .subscribe(x => {
+          this.toastyService.success({
+            title: 'Success',
+            msg: 'The giftee was sucessfully deleted.',
+            theme: 'bootstrap',
+            showClose: true,
+            timeout: 5000
+          });
+          this.router.navigate(['/giftees/new']);
+        });
     }
   }
 

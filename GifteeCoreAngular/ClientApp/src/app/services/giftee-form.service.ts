@@ -26,4 +26,9 @@ export class GifteeFormService {
     return this.http.put('/api/giftees/' + giftee.id, giftee)
       .map(res => res.json());
   }
+
+  deleteGiftee(id) {
+    return this.http.delete('/api/giftees/' + id)
+      .map(res => res.json());
+  }
 }
