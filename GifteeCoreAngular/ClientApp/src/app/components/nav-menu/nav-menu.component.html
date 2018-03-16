@@ -1,4 +1,4 @@
-<nav class="navbar bg-dark">
+<!--<nav class="navbar bg-dark">
   <ul class="navbar-nav">
     <a class='navbar-brand' [routerLink]='["/"]'>GifteeCoreAngular</a>
     <li class="nav-item active" [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
@@ -27,5 +27,41 @@
       </a>
     </li>
   </ul>
+</nav>-->
+<div class="navigation">
+  <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
 
-</nav>
+  <label for="navi-toggle" class="navigation__button">
+    <span class="navigation__icon">&nbsp;</span>
+  </label>
+
+  <div class="navigation__background">&nbsp;</div>
+
+  <nav class="navigation__nav">
+    <ul class="navigation__list">
+      <li class="navigation__item">
+        <a class="navigation__link" href="/">
+          <span class='glyphicon glyphicon-home'></span>Home</a>
+      </li>
+      <li class="navigation__item">
+        <a class="navigation__link" href="/counter">
+          <span class='glyphicon glyphicon-education'></span>Counter</a>
+      </li>
+      <li class="navigation__item">
+        <a class="navigation__link" href="/fetch-data">
+          <span class='glyphicon glyphicon-th-list'></span>Fetch data
+        </a>
+      </li>
+      <li class="navigation__item">
+        <a class="navigation__link" href="/users/get">
+          <span class='glyphicon glyphicon-th-list'></span>Get Users
+        </a>
+      </li>
+      <li class="navigation__item">
+        <a class="navigation__link" href="/giftees/new">
+          <span class='glyphicon glyphicon-th-list'></span>Add Giftee
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>

@@ -1,0 +1,59 @@
+header {
+  padding-top: 5rem;
+  text-align: center;
+  margin: auto;
+  font-size: 2rem;
+}
+
+.btn-text, btn-text:visited {
+  font-size: 1.6rem;
+  color: #00E4FF;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px solid #00E4FF;
+  padding: 3px;
+  transition: all .2s;
+}
+
+
+  .btn-text:hover {
+    background-color: #00E4FF;
+    color: #fff;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+    cursor: pointer;
+  }
+
+.btn-text:active {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  transform: translateY(0);
+}
+
+.header {
+  height: 85vh;
+  background-image: linear-gradient(to right bottom, rgba(79, 204, 244, 0.60), rgba(19, 123, 157, 0.60)), url(../../../assets/images/tech-bg.png);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+}
+
+@supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+  .header {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% /*75vh*/, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% /*75vh*/, 0 100%);
+    height: 95vh;
+  }
+}
+
+@media only screen and (min-resolution: 192dpi) and (min-width: 37.5em), only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), only screen and (min-width: 125em) {
+  .header {
+    background-image: linear-gradient(to right bottom, rgba(224, 92, 88, 0.6), rgba(219, 82, 75, 0.6)), url(../../../assets/images/tech-bg.png);
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  .header {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  }
+}

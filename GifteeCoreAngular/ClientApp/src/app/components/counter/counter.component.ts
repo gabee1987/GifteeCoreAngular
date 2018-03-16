@@ -3,7 +3,8 @@ import { ToastyService, ToastyConfig, ToastOptions, ToastData } from 'ng2-toasty
 
 @Component({
   selector: 'app-counter-component',
-  templateUrl: './counter.component.html'
+  templateUrl: './counter.component.html',
+  styleUrls: ['./counter.component.css']
 })
 export class CounterComponent {
   constructor(private toastyService: ToastyService) {

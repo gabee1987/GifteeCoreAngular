@@ -1,13 +1,28 @@
 <h1>Users</h1>
 
-<ul class="list-group">
-  <a href="#" class="list-group-item list-group-item-action flex-column" *ngFor="let user of users">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1" id="firstName"> First Name: <strong> {{ user.firstName }}</strong></h5>
-      <h5 class="mb-1">Last Name: <strong>{{ user.lastName }}</strong></h5>
-      <p>  </p>
-      <small>Email: <strong>{{ user.email }}</strong></small>
-      <span class="badge badge-primary badge-pill pull-right">{{user.id}}</span>
+<div class="section-features">
+    <!--<ul class="list-group">
+      <a href="#" class="list-group-item list-group-item-action flex-column" *ngFor="let user of users">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1" id="firstName"> First Name: <strong> {{ user.firstName }}</strong></h5>
+          <h5 class="mb-1">Last Name: <strong>{{ user.lastName }}</strong></h5>
+          <p>  </p>
+          <small>Email: <strong>{{ user.email }}</strong></small>
+          <span class="badge badge-primary badge-pill pull-right">{{user.id}}</span>
+        </div>
+      </a>
+    </ul>-->
+
+    <div class="row">
+        <div class="col-1-of-4" *ngFor="let user of users">
+          <div class="feature-box">
+            <img class="feature-box__icon icon-basic-world" src="../../../assets/images/profile-512-2.png">
+            <h3 class="heading-tertiary u-margin-bottom-small">{{ user.firstName }} {{ user.lastName }}</h3>
+            <p class="feature-box__text">
+              {{ user.email }}
+              {{user.id}}
+            </p>
+          </div>
+        </div>
     </div>
-  </a>
-</ul>
+</div>
