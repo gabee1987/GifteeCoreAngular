@@ -3,38 +3,32 @@ body {
   height: 100%;
 }
 
-
-h1 {
-  text-align: center;
-  color: white;
-  font-size: 3rem;
-}
-
-.section-features, .row, .col-1-of-4 {
+.section-users, .row, .col-1-of-4 {
   margin: auto;
 }
 
-.section-features {
+.section-users {
   padding: 20rem 0;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../../../assets/images/gift.jpg);
+  background-image: linear-gradient(to right bottom, rgba(82, 200, 255, 0.95), rgba(73, 168, 212, 0.9)), url(../../../assets/images/gift.jpg);
   background-size: cover;
   //transform: skewY(-7deg);
   margin-top: -5rem;
-  height: auto;
+  height: 93vh;
 }
 
-  .section-features > * {
+  .section-users > * {
     //transform: skewY(7deg);
   }
 
 @media only screen and (max-width: 56.25em) {
-  .section-features {
+  .section-users {
     padding: 10rem 0;
   }
 }
 
-.feature-box {
-  background-color: rgba(255, 255, 255, 0.8);
+.user-box {
+  height: 15em;
+  background-color: rgba(255, 255, 255, 0.6);
   font-size: 1.5rem;
   margin: 2rem;
   padding: 2.5rem;
@@ -45,12 +39,12 @@ h1 {
 }
 
 @media only screen and (max-width: 56.25em) {
-  .feature-box {
+  .user-box {
     padding: 2rem;
   }
 }
 
-.feature-box__icon {
+.user-box__icon {
   height: 8rem;
   font-size: 6rem;
   margin-bottom: .5rem;
@@ -61,13 +55,13 @@ h1 {
 }
 
 @media only screen and (max-width: 56.25em) {
-  .feature-box__icon {
+  .user-box__icon {
     margin-bottom: 0;
     height: 2rem;
   }
 }
 
-.feature-box:hover {
+.user-box:hover {
   transform: translateY(-1.5rem) scale(1.03);
 }
 
@@ -107,3 +101,42 @@ h1 {
   margin-top: 10rem !important;
 }
 
+/*.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(to bottom, #fff, #c5f8f5);
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: .2rem;
+  transition: all .2s;
+  
+}*/
+
+@media only screen and (max-width: 56.25em) {
+  .heading-secondary {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  .heading-secondary {
+    font-size: 2.5rem;
+  }
+}
+
+.heading-secondary:hover {
+  transform: scale(1.1);
+  text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  top: 2rem;
+  text-align: center;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: .2rem;
+  transition: all .2s;
+}

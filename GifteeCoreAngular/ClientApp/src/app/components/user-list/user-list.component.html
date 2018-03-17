@@ -1,6 +1,7 @@
-<h1>Users</h1>
-
-<div class="section-features">
+  <h2 class="heading-secondary">
+    Users
+  </h2>
+  <div class="section-users">
     <!--<ul class="list-group">
       <a href="#" class="list-group-item list-group-item-action flex-column" *ngFor="let user of users">
         <div class="d-flex w-100 justify-content-between">
@@ -14,15 +15,15 @@
     </ul>-->
 
     <div class="row">
-        <div class="col-1-of-4" *ngFor="let user of users">
-          <div class="feature-box">
-            <img class="feature-box__icon icon-basic-world" src="../../../assets/images/profile-512-2.png">
-            <h3 class="heading-tertiary u-margin-bottom-small">{{ user.firstName }} {{ user.lastName }}</h3>
-            <p class="feature-box__text">
-              {{ user.email }}
-              {{user.id}}
-            </p>
-          </div>
+      <div class="col-1-of-4" *ngFor="let user of users">
+        <div class="user-box">
+          <img class="user-box__icon icon-basic-world" src="../../../assets/images/profile-512-2.png">
+          <h3 class="heading-tertiary u-margin-bottom-small">{{ user.firstName }} {{ user.lastName }}</h3>
+          <p class="user-box__text">
+            {{ user.email }}
+            {{user.id}}
+          </p>
         </div>
+      </div>
     </div>
-</div>
+  </div>

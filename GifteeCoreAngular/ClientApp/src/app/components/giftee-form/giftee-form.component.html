@@ -1,7 +1,7 @@
-<section class="section-book">
+<section class="section-gifteeForm">
   <div class="row">
-    <div class="book">
-      <div class="book__form">
+    <div class="gifteeForm">
+      <div class="gifteeForm__form">
         <form action="#" class="form" #f="ngForm" (ngSubmit)="submit()" novalidate>
           <div class="u-margin-bottom-medium">
             <h2 class="heading-secondary">
@@ -10,13 +10,26 @@
           </div>
 
           <div class="form__group">
-            <label for="user" class="form__label">User</label>
-            <select id="user" class="form-control" (change)="onUserChange()" [(ngModel)]="user" name="user" required #selectedUser="ngModel">
-              <option value=""></option>
+            <select id="user" class="form--select" (change)="onUserChange()" [(ngModel)]="user" name="user" #selectedUser="ngModel" required>
+              <option value="" class="form--option"></option>
               <option *ngFor="let user of users" value="{{ user.id }}">{{ user.firstName }} {{ user.lastName }}</option>
             </select>
-            <div class="alert alert-danger" *ngIf="selectedUser.touched && !selectedUser.valid" name="selectedUserAlert">Please select a user.</div>
+            <!--<label for="user" class="form__label__select">User</label>-->
+            <!--<div class="alert alert-danger" *ngIf="selectedUser.touched && !selectedUser.valid" name="selectedUserAlert">Please select a user.</div>-->
           </div>
+
+          <div class="form__group__list">
+            <ul class="giftee__group">
+              <li *ngFor="let giftee of giftees" class="giftee__item">
+                Name: <strong>{{ giftee.firstName }} {{ giftee.lastName }}</strong>
+                Nickname: <strong>{{ giftee.nickName }}</strong>
+                Email: <strong>{{ giftee.email }}</strong>
+                Id: <strong>{{ giftee.id }}</strong>
+                <a class="btn-text btn--blue" aria-hidden="true" href="/giftees/{{ giftee.id }}">Edit</a>
+              </li>
+            </ul>
+          </div>
+       
 
           <div class="form__group">
             <input id="firstName" type="text" value="" class="form__input" [(ngModel)]="giftee.firstName" name="firstName" #firstName="ngModel" placeholder="First name" required />
@@ -44,12 +57,12 @@
 
           <div class="form__group">
             <button class="btn btn--green btn--animated">Save</button>
-            <button *ngIf="giftee.id" class="btn btn--red" type="button" (click)="deleteGiftee()">Delete</button>
+            <button *ngIf="giftee.id" class="btn btn--white btn--animated" (click)="deleteGiftee()">Delete</button>
           </div>
 
         </form>
       </div>
-      <p>
+      <p class="jsonView">
         {{ giftee | json }}
       </p>
     </div>
