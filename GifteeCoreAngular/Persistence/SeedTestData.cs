@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace GifteeCoreAngular.Persistence
 {
-    public class SeedTestData
+    public class SeedTestData // Sample
     {
         public static void Initialize(IServiceProvider serviceProvider)
         {
